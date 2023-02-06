@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/red.png-88c754ca63720a47edd50fcf4fdbb5e0.stex"
+path="res://.import/yellow.png-7dc301aacbbc66f3b33421c437dda6a3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/blocks/red.png"
-dest_files=[ "res://.import/red.png-88c754ca63720a47edd50fcf4fdbb5e0.stex" ]
+source_file="res://assets/bricks/yellow.png"
+dest_files=[ "res://.import/yellow.png-7dc301aacbbc66f3b33421c437dda6a3.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

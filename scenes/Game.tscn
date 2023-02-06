@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/fields/level1.png" type="Texture" id=1]
 [ext_resource path="res://assets/fonts/PressStart.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Ball.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/Game.gd" type="Script" id=5]
+[ext_resource path="res://scenes/bricks/Red_Brick.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=4]
 size = 24
@@ -116,10 +117,39 @@ shape = SubResource( 3 )
 position = Vector2( 638.5, 741 )
 shape = SubResource( 5 )
 
+[node name="Bricks" type="Node2D" parent="."]
+
+[node name="RedBrick1" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 368, 192 )
+
+[node name="RedBrick2" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 436, 192 )
+
+[node name="RedBrick3" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 504, 192 )
+
+[node name="RedBrick4" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 572, 192 )
+
+[node name="RedBrick5" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 640, 192 )
+
+[node name="RedBrick6" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 708, 192 )
+
+[node name="RedBrick7" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 776, 192 )
+
+[node name="RedBrick8" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 844, 192 )
+
+[node name="RedBrick9" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 912, 192 )
+
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 640, 704 )
 
 [node name="Ball" parent="." instance=ExtResource( 4 )]
 position = Vector2( 640, 384 )
 
-[connection signal="body_entered" from="FallZone" to="." method="_on_FallZone_body_entered"]
+[connection signal="body_exited" from="FallZone" to="." method="_on_FallZone_body_exited"]
