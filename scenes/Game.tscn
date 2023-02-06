@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/fields/level1.png" type="Texture" id=1]
 [ext_resource path="res://assets/fonts/PressStart.ttf" type="DynamicFontData" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://scenes/bricks/Blue_Brick.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/bricks/Yellow_Brick.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/bricks/Green_Brick.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/sfx/coin.ogg" type="AudioStream" id=10]
+[ext_resource path="res://assets/sfx/Arkanoid SFX (7).wav" type="AudioStream" id=11]
 
 [sub_resource type="DynamicFont" id=4]
 size = 24
@@ -81,7 +83,7 @@ margin_top = 72.0
 margin_right = 136.0
 margin_bottom = 96.0
 custom_fonts/font = SubResource( 4 )
-text = "000000"
+text = "0"
 
 [node name="HiScoreLabel" type="Label" parent="LeftHUD"]
 margin_left = 16.0
@@ -98,7 +100,7 @@ margin_top = 216.0
 margin_right = 160.0
 margin_bottom = 240.0
 custom_fonts/font = SubResource( 4 )
-text = "000000"
+text = "0"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 8
@@ -237,5 +239,11 @@ position = Vector2( 640, 704 )
 
 [node name="Ball" parent="." instance=ExtResource( 4 )]
 position = Vector2( 640, 384 )
+
+[node name="Credit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="BrickBreak" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
 
 [connection signal="body_exited" from="FallZone" to="." method="_on_FallZone_body_exited"]
