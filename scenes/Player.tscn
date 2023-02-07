@@ -31,3 +31,10 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2( 0.25, 0 )
 shape = SubResource( 1 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Move" type="Timer" parent="."]
+wait_time = 0.05
+
+[connection signal="timeout" from="Move" to="." method="_on_Move_timeout"]
