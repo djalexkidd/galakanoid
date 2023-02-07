@@ -3,10 +3,7 @@
 [ext_resource path="res://assets/fonts/PressStart.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/TitleScreen.gd" type="Script" id=2]
 [ext_resource path="res://assets/sfx/coin.ogg" type="AudioStream" id=3]
-
-[sub_resource type="DynamicFont" id=1]
-size = 96
-font_data = ExtResource( 1 )
+[ext_resource path="res://assets/title.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=3]
 size = 24
@@ -26,13 +23,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="GameTitle" type="Label" parent="."]
-anchor_right = 1.0
-margin_top = 32.0
-margin_bottom = 128.0
-custom_fonts/font = SubResource( 1 )
-text = "GALAKANOID"
-align = 1
+[node name="GameTitle" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -443.0
+margin_right = 443.0
+margin_bottom = 217.0
+texture = ExtResource( 4 )
+expand = true
 
 [node name="Author" type="Label" parent="."]
 anchor_left = 1.0
