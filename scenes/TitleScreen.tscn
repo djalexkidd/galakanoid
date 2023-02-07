@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/fonts/PressStart.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/TitleScreen.gd" type="Script" id=2]
@@ -18,6 +18,10 @@ size = 64
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=5]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
 size = 32
 font_data = ExtResource( 1 )
 
@@ -96,5 +100,34 @@ custom_fonts/font = SubResource( 5 )
 text = "(PRESS 5)"
 align = 1
 
+[node name="ControlButton" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -268.0
+margin_top = -134.0
+margin_bottom = -96.0
+custom_fonts/font = SubResource( 6 )
+text = "KEYBOARD"
+flat = true
+align = 2
+
+[node name="FullScreenButton" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -364.0
+margin_top = -70.0
+margin_bottom = -32.0
+custom_fonts/font = SubResource( 6 )
+text = "FULL SCREEN"
+flat = true
+align = 2
+
 [node name="Credit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+
+[connection signal="pressed" from="ControlButton" to="." method="_on_ControlButton_pressed"]
+[connection signal="pressed" from="FullScreenButton" to="." method="_on_FullScreenButton_pressed"]

@@ -14,6 +14,9 @@ func _process(delta):
 		$Credit.play()
 		_ready()
 	
+	if time < 0:
+		get_tree().change_scene("res://scenes/TitleScreen.tscn")
+	
 	time -= delta
 	$RightHUD/TimeLabel2.text = "%0.1f" % time
 
