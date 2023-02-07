@@ -1,6 +1,7 @@
 extends Node2D
 
 var score = 0
+var time = 120
 
 func _ready():
 	$LeftHUD/CreditsLabel2.text = str(Global.credits)
@@ -10,6 +11,9 @@ func _process(delta):
 		Global.credits += 1
 		$Credit.play()
 		_ready()
+	
+	time -= delta
+	$RightHUD/TimeLabel2.text = "%0.1f" % time
 
 func _on_FallZone_body_exited(body):
 	get_tree().reload_current_scene()

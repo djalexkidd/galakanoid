@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/ball/normal.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Ball.gd" type="Script" id=2]
-[ext_resource path="res://assets/sfx/Arkanoid SFX (6).wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/sfx/ball1.wav" type="AudioStream" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 14.0

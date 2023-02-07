@@ -10,7 +10,7 @@
 [ext_resource path="res://scenes/bricks/Yellow_Brick.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/bricks/Green_Brick.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/sfx/coin.ogg" type="AudioStream" id=10]
-[ext_resource path="res://assets/sfx/Arkanoid SFX (7).wav" type="AudioStream" id=11]
+[ext_resource path="res://assets/sfx/ball2.wav" type="AudioStream" id=11]
 
 [sub_resource type="DynamicFont" id=4]
 size = 24
@@ -106,19 +106,24 @@ margin_bottom = 240.0
 custom_fonts/font = SubResource( 4 )
 text = "0"
 
-[node name="TimeLabel" type="Label" parent="LeftHUD"]
-margin_left = 1008.0
+[node name="RightHUD" type="Control" parent="."]
+margin_left = 976.0
+margin_right = 1280.0
+margin_bottom = 720.0
+
+[node name="TimeLabel" type="Label" parent="RightHUD"]
+margin_left = 32.0
 margin_top = 80.0
-margin_right = 1104.0
+margin_right = 128.0
 margin_bottom = 104.0
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_fonts/font = SubResource( 4 )
 text = "TIME"
 
-[node name="TimeLabel2" type="Label" parent="LeftHUD"]
-margin_left = 1008.0
+[node name="TimeLabel2" type="Label" parent="RightHUD"]
+margin_left = 32.0
 margin_top = 107.0
-margin_right = 1128.0
+margin_right = 152.0
 margin_bottom = 139.0
 custom_fonts/font = SubResource( 6 )
 text = "0"

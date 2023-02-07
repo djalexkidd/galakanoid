@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Arkanoid SFX (6).wav-915b5c9eaf699f0ba9507a5c24c10f99.sample"
+path="res://.import/ball1.wav-66366ad048aad2ca6b8f4e92ba99c23c.sample"
 
 [deps]
 
-source_file="res://assets/sfx/Arkanoid SFX (6).wav"
-dest_files=[ "res://.import/Arkanoid SFX (6).wav-915b5c9eaf699f0ba9507a5c24c10f99.sample" ]
+source_file="res://assets/sfx/ball1.wav"
+dest_files=[ "res://.import/ball1.wav-66366ad048aad2ca6b8f4e92ba99c23c.sample" ]
 
 [params]
 
