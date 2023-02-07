@@ -272,4 +272,5 @@ stream = ExtResource( 10 )
 [node name="BrickBreak" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
 
+[connection signal="lost" from="." to="Ball" method="_on_Game_lost"]
 [connection signal="body_exited" from="FallZone" to="." method="_on_FallZone_body_exited"]
