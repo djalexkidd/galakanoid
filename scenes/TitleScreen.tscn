@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/fonts/PressStart.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/TitleScreen.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/title.png" type="Texture" id=4]
 [ext_resource path="res://assets/touchcontrols/coin_gold.png" type="Texture" id=5]
 [ext_resource path="res://assets/touchcontrols/spr_start_button_0.png" type="Texture" id=6]
+[ext_resource path="res://assets/sfx/exitopened.wav" type="AudioStream" id=7]
 
 [sub_resource type="DynamicFont" id=3]
 size = 24
@@ -130,6 +131,9 @@ align = 2
 
 [node name="Credit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+
+[node name="FartMode" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
 
 [node name="CoinTouchScreenButton" type="TouchScreenButton" parent="."]
 position = Vector2( 36, 576 )
