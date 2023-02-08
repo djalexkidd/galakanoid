@@ -50,6 +50,7 @@ func _on_ComboTimer_timeout():
 func check_victory():
 	if score > score_objective[next_level]:
 		$Exit/MeshInstance2D.show()
+		$Walls/Exit.queue_free()
 		$ExitOpened.play()
 		next_level += 1
 

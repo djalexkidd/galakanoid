@@ -10,9 +10,10 @@ func _ready():
 
 #Suit le mouvement de la souris sur l'axe X
 func _on_Move_timeout():
-	var tween = get_node("Tween")
-	tween.interpolate_property(self, "position",Vector2(position.x,position.y), Vector2(get_viewport().get_mouse_position().x,position.y),0.05 ,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-	tween.start()
+	if get_viewport().get_mouse_position().x > 355 and get_viewport().get_mouse_position().x < 920:
+		var tween = get_node("Tween")
+		tween.interpolate_property(self, "position",Vector2(position.x,position.y), Vector2(get_viewport().get_mouse_position().x,position.y),0.05 ,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		tween.start()
 
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_right"): #Touche droite

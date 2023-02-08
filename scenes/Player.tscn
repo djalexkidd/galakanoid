@@ -35,6 +35,6 @@ shape = SubResource( 1 )
 [node name="Tween" type="Tween" parent="."]
 
 [node name="Move" type="Timer" parent="."]
-wait_time = 0.05
+wait_time = 0.01
 
 [connection signal="timeout" from="Move" to="." method="_on_Move_timeout"]
