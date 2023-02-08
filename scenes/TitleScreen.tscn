@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/fonts/PressStart.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/TitleScreen.gd" type="Script" id=2]
 [ext_resource path="res://assets/sfx/coin.ogg" type="AudioStream" id=3]
 [ext_resource path="res://assets/title.png" type="Texture" id=4]
+[ext_resource path="res://assets/touchcontrols/coin_gold.png" type="Texture" id=5]
+[ext_resource path="res://assets/touchcontrols/spr_start_button_0.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=3]
 size = 24
@@ -128,6 +130,18 @@ align = 2
 
 [node name="Credit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+
+[node name="CoinTouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2( 36, 576 )
+normal = ExtResource( 5 )
+action = "coin"
+visibility_mode = 1
+
+[node name="StartTouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2( 164, 572 )
+normal = ExtResource( 6 )
+action = "start"
+visibility_mode = 1
 
 [connection signal="pressed" from="ControlButton" to="." method="_on_ControlButton_pressed"]
 [connection signal="pressed" from="FullScreenButton" to="." method="_on_FullScreenButton_pressed"]
