@@ -2,6 +2,7 @@ extends Node2D
 
 var score = 0
 var time = 120
+var combo = 0
 
 signal lost
 
@@ -26,3 +27,19 @@ func _on_FallZone_body_exited(body):
 func add_score(add):
 	score += add
 	$LeftHUD/ScoreLabel2.text = str(score)
+
+func combo():
+	$ComboTimer.start()
+	combo += 1
+	if combo == 2:
+		$RightHUD/ComboLabel.show()
+		$RightHUD/ComboLabel2.show()
+	$RightHUD/ComboLabel2.text = "x" + str(combo)
+
+func _on_ComboTimer_timeout():
+	if combo > 1:
+		time += combo
+		add_score(100 * combo)
+	combo = 0
+	$RightHUD/ComboLabel.hide()
+	$RightHUD/ComboLabel2.hide()

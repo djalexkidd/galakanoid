@@ -7,4 +7,5 @@ func _on_Brick_body_entered(body):
 	$Timer.start()
 	get_node("/root/Game").add_score(100)
 	get_node("/root/Game/BrickBreak").play()
+	get_node("/root/Game").combo()
 	queue_free()
