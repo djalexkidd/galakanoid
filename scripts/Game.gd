@@ -3,6 +3,9 @@ extends Node2D
 var score = 0
 var time = 120
 var combo = 0
+var level = 0
+var next_level = 0
+var score_objective = [3000,6000]
 
 signal lost
 
@@ -43,3 +46,12 @@ func _on_ComboTimer_timeout():
 	combo = 0
 	$RightHUD/ComboLabel.hide()
 	$RightHUD/ComboLabel2.hide()
+
+func check_victory():
+	if score > score_objective[next_level]:
+		$Exit/MeshInstance2D.show()
+		$ExitOpened.play()
+		next_level += 1
+
+func _on_Exit_body_exited(body):
+	get_tree().change_scene("res://scenes/TitleScreen.tscn")
