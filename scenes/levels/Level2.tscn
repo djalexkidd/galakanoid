@@ -1,0 +1,89 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/bricks/Green_Brick.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/bricks/Blue_Brick.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/bricks/Red_Brick.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/bricks/Yellow_Brick.tscn" type="PackedScene" id=5]
+
+[node name="Bricks" type="Node2D"]
+
+[node name="RedBrick1" parent="." instance=ExtResource( 4 )]
+position = Vector2( 640, 166 )
+
+[node name="RedBrick2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 640, 278 )
+
+[node name="RedBrick3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 640, 250 )
+
+[node name="RedBrick4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 640, 222 )
+
+[node name="RedBrick5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 640, 194 )
+
+[node name="RedBrick8" parent="." instance=ExtResource( 4 )]
+position = Vector2( 912, 250 )
+
+[node name="RedBrick9" parent="." instance=ExtResource( 4 )]
+position = Vector2( 912, 278 )
+
+[node name="RedBrick10" parent="." instance=ExtResource( 4 )]
+position = Vector2( 368, 250 )
+
+[node name="RedBrick11" parent="." instance=ExtResource( 4 )]
+position = Vector2( 368, 278 )
+
+[node name="BlueBrick7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 844, 250 )
+
+[node name="BlueBrick8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 844, 278 )
+
+[node name="BlueBrick9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 436, 250 )
+
+[node name="BlueBrick10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 436, 278 )
+
+[node name="GreenBrick5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 776, 222 )
+
+[node name="GreenBrick6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 776, 278 )
+
+[node name="GreenBrick7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 776, 250 )
+
+[node name="GreenBrick8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 504, 222 )
+
+[node name="GreenBrick9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 504, 278 )
+
+[node name="GreenBrick10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 504, 250 )
+
+[node name="YellowBrick3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 708, 194 )
+
+[node name="YellowBrick4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 708, 222 )
+
+[node name="YellowBrick5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 708, 250 )
+
+[node name="YellowBrick6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 708, 278 )
+
+[node name="YellowBrick7" parent="." instance=ExtResource( 5 )]
+position = Vector2( 572, 194 )
+
+[node name="YellowBrick8" parent="." instance=ExtResource( 5 )]
+position = Vector2( 572, 222 )
+
+[node name="YellowBrick9" parent="." instance=ExtResource( 5 )]
+position = Vector2( 572, 250 )
+
+[node name="YellowBrick10" parent="." instance=ExtResource( 5 )]
+position = Vector2( 572, 278 )

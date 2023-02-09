@@ -1,14 +1,12 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://assets/fields/level1.png" type="Texture" id=1]
 [ext_resource path="res://assets/fonts/PressStart.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Ball.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/Game.gd" type="Script" id=5]
-[ext_resource path="res://scenes/bricks/Red_Brick.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/bricks/Blue_Brick.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/bricks/Yellow_Brick.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/bricks/Green_Brick.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/levels/Level1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/fields/level2.png" type="Texture" id=7]
 [ext_resource path="res://assets/sfx/coin.ogg" type="AudioStream" id=10]
 [ext_resource path="res://assets/sfx/ball2.wav" type="AudioStream" id=11]
 [ext_resource path="res://assets/sfx/exitopened.wav" type="AudioStream" id=12]
@@ -64,7 +62,7 @@ margin_right = 1280.0
 margin_bottom = 720.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Field1" type="TextureRect" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -73,6 +71,18 @@ margin_left = 304.0
 margin_right = 976.0
 margin_bottom = 720.0
 texture = ExtResource( 1 )
+expand = true
+
+[node name="Field2" type="TextureRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 304.0
+margin_right = 976.0
+margin_bottom = 720.0
+texture = ExtResource( 7 )
 expand = true
 
 [node name="LeftHUD" type="Control" parent="."]
@@ -201,115 +211,7 @@ shape = SubResource( 12 )
 position = Vector2( 638.5, 741 )
 shape = SubResource( 5 )
 
-[node name="Bricks" type="Node2D" parent="."]
-
-[node name="RedBrick1" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 368, 192 )
-
-[node name="RedBrick2" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 436, 192 )
-
-[node name="RedBrick3" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 504, 192 )
-
-[node name="RedBrick4" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 572, 192 )
-
-[node name="RedBrick5" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 640, 192 )
-
-[node name="RedBrick6" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 708, 192 )
-
-[node name="RedBrick7" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 776, 192 )
-
-[node name="RedBrick8" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 844, 192 )
-
-[node name="RedBrick9" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 912, 192 )
-
-[node name="BlueBrick" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( 368, 221 )
-
-[node name="BlueBrick2" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( 436, 221 )
-
-[node name="BlueBrick3" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( 504, 221 )
-
-[node name="BlueBrick4" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( 572, 221 )
-
-[node name="BlueBrick5" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( 640, 221 )
-
-[node name="BlueBrick6" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( 708, 221 )
-
-[node name="BlueBrick7" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( 776, 221 )
-
-[node name="BlueBrick8" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( 844, 221 )
-
-[node name="BlueBrick9" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( 912, 221 )
-
-[node name="GreenBrick" parent="Bricks" instance=ExtResource( 9 )]
-position = Vector2( 368, 250 )
-
-[node name="GreenBrick2" parent="Bricks" instance=ExtResource( 9 )]
-position = Vector2( 436, 250 )
-
-[node name="GreenBrick3" parent="Bricks" instance=ExtResource( 9 )]
-position = Vector2( 504, 250 )
-
-[node name="GreenBrick4" parent="Bricks" instance=ExtResource( 9 )]
-position = Vector2( 572, 250 )
-
-[node name="GreenBrick5" parent="Bricks" instance=ExtResource( 9 )]
-position = Vector2( 640, 250 )
-
-[node name="GreenBrick6" parent="Bricks" instance=ExtResource( 9 )]
-position = Vector2( 708, 250 )
-
-[node name="GreenBrick7" parent="Bricks" instance=ExtResource( 9 )]
-position = Vector2( 776, 250 )
-
-[node name="GreenBrick8" parent="Bricks" instance=ExtResource( 9 )]
-position = Vector2( 844, 250 )
-
-[node name="GreenBrick9" parent="Bricks" instance=ExtResource( 9 )]
-position = Vector2( 912, 250 )
-
-[node name="YellowBrick" parent="Bricks" instance=ExtResource( 8 )]
-position = Vector2( 368, 278 )
-
-[node name="YellowBrick2" parent="Bricks" instance=ExtResource( 8 )]
-position = Vector2( 436, 278 )
-
-[node name="YellowBrick3" parent="Bricks" instance=ExtResource( 8 )]
-position = Vector2( 504, 278 )
-
-[node name="YellowBrick4" parent="Bricks" instance=ExtResource( 8 )]
-position = Vector2( 572, 278 )
-
-[node name="YellowBrick5" parent="Bricks" instance=ExtResource( 8 )]
-position = Vector2( 640, 278 )
-
-[node name="YellowBrick6" parent="Bricks" instance=ExtResource( 8 )]
-position = Vector2( 708, 278 )
-
-[node name="YellowBrick7" parent="Bricks" instance=ExtResource( 8 )]
-position = Vector2( 776, 278 )
-
-[node name="YellowBrick8" parent="Bricks" instance=ExtResource( 8 )]
-position = Vector2( 844, 278 )
-
-[node name="YellowBrick9" parent="Bricks" instance=ExtResource( 8 )]
-position = Vector2( 912, 278 )
+[node name="Bricks" parent="." instance=ExtResource( 6 )]
 
 [node name="Exit" type="Area2D" parent="."]
 

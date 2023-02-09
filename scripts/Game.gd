@@ -5,7 +5,9 @@ var time = 120
 var combo = 0
 var level = 0
 var next_level = 0
-var score_objective = [3000,6000]
+var score_objective = [2900,5900,8900]
+
+var current_bg = 1
 
 signal lost
 
@@ -46,13 +48,36 @@ func _on_ComboTimer_timeout():
 	combo = 0
 	$RightHUD/ComboLabel.hide()
 	$RightHUD/ComboLabel2.hide()
+	check_victory()
 
 func check_victory():
-	if score > score_objective[next_level]:
+	if score > score_objective[next_level] and level == next_level:
 		$Exit/MeshInstance2D.show()
-		$Walls/Exit.queue_free()
+		$Walls/Exit.set_deferred("disabled", true)
 		$ExitOpened.play()
 		next_level += 1
 
 func _on_Exit_body_exited(body):
-	get_tree().change_scene("res://scenes/TitleScreen.tscn")
+	level += 1
+	$Bricks.queue_free()
+	$Exit/MeshInstance2D.hide()
+	$Walls/Exit.set_deferred("disabled", false)
+	
+	var level_data_path = "res://scenes/levels/Level2.tscn"
+	var level_data = load(level_data_path).instance()
+	add_child(level_data)
+	
+	$Ball.position = Vector2(824, 700)
+	
+	change_field()
+
+func change_field():
+	current_bg += 1
+	if current_bg == 3:
+		get_node("Field" + str(current_bg-1)).hide()
+		$Field1.show()
+	else:
+		get_node("Field" + str(current_bg-1)).hide()
+		get_node("Field" + str(current_bg)).show()
+	if current_bg == 3:
+		current_bg = 1
