@@ -1,7 +1,7 @@
 extends Node2D
 
 var score = 0
-var time = 120
+var time = 123
 var combo = 0
 var level = 0
 var next_level = 0
@@ -13,12 +13,13 @@ signal lost
 
 func _ready():
 	$LeftHUD/CreditsLabel2.text = str(Global.credits)
+	emit_signal("lost")
 
 func _process(delta):
 	if Input.is_action_just_pressed("coin") and Global.credits < 9:
 		Global.credits += 1
 		$Credit.play()
-		_ready()
+		$LeftHUD/CreditsLabel2.text = str(Global.credits)
 	
 	if time < 0:
 		get_tree().change_scene("res://scenes/TitleScreen.tscn")
@@ -70,6 +71,7 @@ func _on_Exit_body_exited(body):
 	$Ball.position = Vector2(824, 700)
 	
 	change_field()
+	time += 20
 
 func change_field():
 	current_bg += 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://assets/fields/level1.png" type="Texture" id=1]
 [ext_resource path="res://assets/fonts/PressStart.ttf" type="DynamicFontData" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scripts/Game.gd" type="Script" id=5]
 [ext_resource path="res://scenes/levels/Level1.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/fields/level2.png" type="Texture" id=7]
+[ext_resource path="res://assets/sfx/start.ogg" type="AudioStream" id=8]
 [ext_resource path="res://assets/sfx/coin.ogg" type="AudioStream" id=10]
 [ext_resource path="res://assets/sfx/ball2.wav" type="AudioStream" id=11]
 [ext_resource path="res://assets/sfx/exitopened.wav" type="AudioStream" id=12]
@@ -265,6 +266,11 @@ stream = ExtResource( 16 )
 
 [node name="ExitOpened" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
+
+[node name="RoundStart" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = 4.0
+autoplay = true
 
 [node name="ComboTimer" type="Timer" parent="."]
 wait_time = 2.0
