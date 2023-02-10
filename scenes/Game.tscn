@@ -290,7 +290,7 @@ shape = SubResource( 17 )
 position = Vector2( 638.5, 741 )
 shape = SubResource( 5 )
 
-[node name="Bricks" parent="." instance=ExtResource( 6 )]
+[node name="Bricks1" parent="." instance=ExtResource( 6 )]
 
 [node name="Exit" type="Area2D" parent="."]
 

@@ -5,7 +5,7 @@ var time = 123
 var combo = 0
 var level = 0
 var next_level = 0
-var score_objective = [2900,5900,8900]
+var score_objective = [2900,5900,8900,11900,15900]
 
 var current_bg = 1
 
@@ -65,15 +65,16 @@ func check_victory():
 		next_level += 1
 
 func _on_Exit_body_exited(body):
+	get_node("Bricks" + str(level+1)).queue_free()
 	level += 1
-	get_node("Bricks").queue_free()
 	$Exit/MeshInstance2D.hide()
 	$Walls/Exit.set_deferred("disabled", false)
 	$Exit2/MeshInstance2D.hide()
 	$Walls/Exit2.set_deferred("disabled", false)
 	
-	var level_data_path = "res://scenes/levels/Level2.tscn"
+	var level_data_path = "res://scenes/levels/Level" + str(level) + ".tscn"
 	var level_data = load(level_data_path).instance()
+	level_data.set_name("Bricks" + str(level+1))
 	add_child(level_data)
 	
 	$Ball.position = Vector2(824, 700)
@@ -96,7 +97,7 @@ func gameover_hide():
 	get_node("Field" + str(current_bg)).hide()
 	$Player.hide()
 	$Ball.hide()
-	get_node("Bricks").hide()
+	get_node("Bricks" + str(level+1)).hide()
 	$Ball.set_process(false)
 
 func _on_GameOver_okay():
@@ -104,6 +105,6 @@ func _on_GameOver_okay():
 	get_node("Field" + str(current_bg)).show()
 	$Player.show()
 	$Ball.show()
-	get_node("Bricks").show()
+	get_node("Bricks" + str(level+1)).show()
 	$Ball.set_process(true)
 	set_process(true)
