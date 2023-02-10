@@ -9,6 +9,8 @@ var score_objective = [2900,5900,8900]
 
 var current_bg = 1
 
+var gameover
+
 signal lost
 
 func _ready():
@@ -21,8 +23,10 @@ func _process(delta):
 		$Credit.play()
 		$LeftHUD/CreditsLabel2.text = str(Global.credits)
 	
-	if time < 0:
-		get_tree().change_scene("res://scenes/TitleScreen.tscn")
+	if "%0.1f" % time == "0.0":
+		$GameOver.start()
+		gameover_hide()
+		set_process(false)
 	
 	time -= delta
 	$RightHUD/TimeLabel2.text = "%0.1f" % time
@@ -55,14 +59,18 @@ func check_victory():
 	if score > score_objective[next_level] and level == next_level:
 		$Exit/MeshInstance2D.show()
 		$Walls/Exit.set_deferred("disabled", true)
+		$Exit2/MeshInstance2D.show()
+		$Walls/Exit2.set_deferred("disabled", true)
 		$ExitOpened.play()
 		next_level += 1
 
 func _on_Exit_body_exited(body):
 	level += 1
-	$Bricks.queue_free()
+	get_node("Bricks").queue_free()
 	$Exit/MeshInstance2D.hide()
 	$Walls/Exit.set_deferred("disabled", false)
+	$Exit2/MeshInstance2D.hide()
+	$Walls/Exit2.set_deferred("disabled", false)
 	
 	var level_data_path = "res://scenes/levels/Level2.tscn"
 	var level_data = load(level_data_path).instance()
@@ -83,3 +91,19 @@ func change_field():
 		get_node("Field" + str(current_bg)).show()
 	if current_bg == 3:
 		current_bg = 1
+
+func gameover_hide():
+	get_node("Field" + str(current_bg)).hide()
+	$Player.hide()
+	$Ball.hide()
+	get_node("Bricks").hide()
+	$Ball.set_process(false)
+
+func _on_GameOver_okay():
+	time = 120
+	get_node("Field" + str(current_bg)).show()
+	$Player.show()
+	$Ball.show()
+	get_node("Bricks").show()
+	$Ball.set_process(true)
+	set_process(true)
