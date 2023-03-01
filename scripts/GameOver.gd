@@ -32,9 +32,14 @@ func _on_Timer_timeout():
 	else:
 		get_node("../Player/Ball/RespawnTimer").start()
 	if time_left == -1:
-		if get_node("..").score > Global.highscore:
+		$Timer.queue_free()
+		get_node("../GameOverScreen").show()
+		get_node("../GameOverScreen/AudioStreamPlayer").play()
+
+func _on_AudioStreamPlayer_finished():
+	if get_node("..").score > Global.highscore:
 			Global.last_score = get_node("..").score
 			Global.last_level = get_node("..").level + 1
 			get_tree().change_scene("res://scenes/NewHighScore.tscn")
-		else:
-			get_tree().change_scene("res://scenes/TitleScreen.tscn")
+	else:
+		get_tree().change_scene("res://scenes/TitleScreen.tscn")
