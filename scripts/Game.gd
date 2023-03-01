@@ -72,7 +72,7 @@ func _on_Exit_body_exited(body):
 	$Exit2/MeshInstance2D.hide()
 	$Walls/Exit2.set_deferred("disabled", false)
 	
-	var level_data_path = "res://scenes/levels/Level" + str(level) + ".tscn"
+	var level_data_path = "res://scenes/levels/Level" + str(level+1) + ".tscn"
 	var level_data = load(level_data_path).instance()
 	level_data.set_name("Bricks" + str(level+1))
 	add_child(level_data)
@@ -84,13 +84,13 @@ func _on_Exit_body_exited(body):
 
 func change_field():
 	current_bg += 1
-	if current_bg == 3:
+	if current_bg == 5:
 		get_node("Field" + str(current_bg-1)).hide()
 		$Field1.show()
 	else:
 		get_node("Field" + str(current_bg-1)).hide()
 		get_node("Field" + str(current_bg)).show()
-	if current_bg == 3:
+	if current_bg == 5:
 		current_bg = 1
 
 func gameover_hide():

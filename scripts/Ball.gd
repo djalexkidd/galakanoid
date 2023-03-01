@@ -12,7 +12,7 @@ func _physics_process(delta):
 			if SPEEDX > 0:
 				SPEEDX = rand_range(0,600)
 			else:
-				SPEEDY = rand_range(180,400)
+				SPEEDY = rand_range(360,500)
 		SPEEDY = -SPEEDY
 	elif is_on_ceiling():
 		SPEEDY = -SPEEDY
