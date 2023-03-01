@@ -96,15 +96,13 @@ func change_field():
 func gameover_hide():
 	get_node("Field" + str(current_bg)).hide()
 	$Player.hide()
-	$Ball.hide()
+	if get_node_or_null("Ball"):
+		$Ball._on_Game_lost()
 	get_node("Bricks" + str(level+1)).hide()
-	$Ball.set_process(false)
 
 func _on_GameOver_okay():
 	time = 120
 	get_node("Field" + str(current_bg)).show()
 	$Player.show()
-	$Ball.show()
 	get_node("Bricks" + str(level+1)).show()
-	$Ball.set_process(true)
 	set_process(true)

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/highscore.mp3-bd1f1f8cbc447b8d455fb93b97014462.mp3str"
+
+[deps]
+
+source_file="res://assets/bgm/highscore.mp3"
+dest_files=[ "res://.import/highscore.mp3-bd1f1f8cbc447b8d455fb93b97014462.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

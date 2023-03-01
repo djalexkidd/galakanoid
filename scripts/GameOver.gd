@@ -27,5 +27,14 @@ func _process(delta):
 func _on_Timer_timeout():
 	time_left -= 1
 	$TimeLeftLabel.text = str(time_left)
+	if get_node_or_null("../Ball"):
+		get_node("../Ball/RespawnTimer").start()
+	else:
+		get_node("../Player/Ball/RespawnTimer").start()
 	if time_left == -1:
-		get_tree().change_scene("res://scenes/TitleScreen.tscn")
+		if get_node("..").score > Global.highscore:
+			Global.last_score = get_node("..").score
+			Global.last_level = get_node("..").level + 1
+			get_tree().change_scene("res://scenes/NewHighScore.tscn")
+		else:
+			get_tree().change_scene("res://scenes/TitleScreen.tscn")
