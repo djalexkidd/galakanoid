@@ -15,6 +15,7 @@ signal lost
 
 func _ready():
 	$LeftHUD/CreditsLabel2.text = str(Global.credits)
+	$LeftHUD/HiScoreLabel2.text = str(Global.highscore)
 	emit_signal("lost")
 
 func _process(delta):
