@@ -37,7 +37,7 @@ func _on_Timer_timeout():
 		get_node("../GameOverScreen/AudioStreamPlayer").play()
 
 func _on_AudioStreamPlayer_finished():
-	if get_node("..").score > Global.highscore:
+	if get_node("..").score > Global.highscore and !Global.fart_mode:
 			Global.last_score = get_node("..").score
 			Global.last_level = get_node("..").level + 1
 			get_tree().change_scene("res://scenes/NewHighScore.tscn")
