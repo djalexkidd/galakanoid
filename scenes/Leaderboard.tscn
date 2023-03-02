@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://assets/bgm/highscore.mp3" type="AudioStream" id=1]
 [ext_resource path="res://assets/fonts/PressStart.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://scripts/Leaderboard.gd" type="Script" id=3]
 [ext_resource path="res://assets/fonts/Retro_Leaderboard.tres" type="DynamicFont" id=4]
@@ -112,10 +111,6 @@ margin_right = 160.0
 margin_bottom = -32.0
 custom_fonts/font = ExtResource( 4 )
 text = "LOADING..."
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 1 )
-autoplay = true
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
