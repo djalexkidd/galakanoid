@@ -1,0 +1,124 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/bgm/highscore.mp3" type="AudioStream" id=1]
+[ext_resource path="res://assets/fonts/PressStart.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scripts/Leaderboard.gd" type="Script" id=3]
+[ext_resource path="res://assets/fonts/Retro_Leaderboard.tres" type="DynamicFont" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 48
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 24
+font_data = ExtResource( 2 )
+
+[node name="Leaderboard" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -406, -36 )
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="TitleLabel" type="Label" parent="."]
+anchor_right = 1.0
+margin_top = 64.0
+margin_bottom = 112.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "LEADERBOARD"
+align = 1
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -427.0
+margin_top = -160.0
+margin_right = 427.0
+margin_bottom = -66.0
+custom_constants/vseparation = 20
+custom_constants/hseparation = 70
+columns = 3
+
+[node name="RankLabel" type="Label" parent="GridContainer"]
+margin_right = 128.0
+margin_bottom = 32.0
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "RANK"
+align = 2
+
+[node name="ScoreLabel" type="Label" parent="GridContainer"]
+margin_left = 198.0
+margin_right = 358.0
+margin_bottom = 32.0
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "SCORE"
+align = 2
+
+[node name="NameLabel" type="Label" parent="GridContainer"]
+margin_left = 428.0
+margin_right = 556.0
+margin_bottom = 32.0
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "NAME"
+align = 1
+
+[node name="BackButton" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -228.0
+margin_top = -82.0
+margin_right = -24.0
+margin_bottom = -28.0
+custom_fonts/font = SubResource( 4 )
+text = "BACK"
+flat = true
+
+[node name="WebButton" type="Button" parent="."]
+visible = false
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 24.0
+margin_top = -54.0
+margin_right = 516.0
+margin_bottom = -24.0
+custom_fonts/font = SubResource( 5 )
+text = "GET FULL LEADERBOARD"
+flat = true
+
+[node name="LoadingLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -160.0
+margin_top = -64.0
+margin_right = 160.0
+margin_bottom = -32.0
+custom_fonts/font = ExtResource( 4 )
+text = "LOADING..."
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="WebButton" to="." method="_on_WebButton_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]

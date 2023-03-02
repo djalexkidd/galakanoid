@@ -104,6 +104,19 @@ custom_fonts/font = SubResource( 5 )
 text = "(PRESS 5)"
 align = 1
 
+[node name="LeaderboardButton" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -364.0
+margin_top = -198.0
+margin_bottom = -160.0
+custom_fonts/font = SubResource( 6 )
+text = "LEADERBOARD"
+flat = true
+align = 2
+
 [node name="ControlButton" type="Button" parent="."]
 anchor_left = 1.0
 anchor_top = 1.0
@@ -152,5 +165,6 @@ normal = ExtResource( 6 )
 action = "start"
 visibility_mode = 1
 
+[connection signal="pressed" from="LeaderboardButton" to="." method="_on_LeaderboardButton_pressed"]
 [connection signal="pressed" from="ControlButton" to="." method="_on_ControlButton_pressed"]
 [connection signal="pressed" from="FullScreenButton" to="." method="_on_FullScreenButton_pressed"]

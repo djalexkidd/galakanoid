@@ -35,6 +35,9 @@ func _on_FullScreenButton_pressed():
 	else:
 		OS.window_fullscreen = true
 
+func _on_LeaderboardButton_pressed():
+	get_tree().change_scene("res://scenes/Leaderboard.tscn")
+
 # CHEAT CODE
 
 const MAX_LENGTH := 32
