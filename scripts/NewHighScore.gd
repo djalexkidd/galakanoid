@@ -14,8 +14,9 @@ func _make_post_request(url, data_to_send, use_ssl):
 
 func _on_SendButton_pressed():
 	if $GridContainer/NameEdit.get_text() != "":
+		$SendButton.hide()
 		$SendingLabel.show()
-		_make_post_request("http://localhost:3000/sendscore?apikey=0", {"name": $GridContainer/NameEdit.get_text(), "score": Global.last_score}, false)
+		_make_post_request("https://2022.alexandre.backhub.fr/sendscore?apikey=0", {"name": $GridContainer/NameEdit.get_text(), "score": Global.last_score}, false)
 
 func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	get_tree().change_scene("res://scenes/TitleScreen.tscn")

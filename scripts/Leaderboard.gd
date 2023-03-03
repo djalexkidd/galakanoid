@@ -1,7 +1,7 @@
 extends Control
 
 func _ready():
-	$HTTPRequest.request("http://localhost:3000/api/galakanoid")
+	$HTTPRequest.request("https://2022.alexandre.backhub.fr/api/galakanoid")
 
 func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	var json = JSON.parse(body.get_string_from_utf8())
@@ -35,4 +35,4 @@ func _on_BackButton_pressed():
 	get_tree().change_scene("res://scenes/TitleScreen.tscn")
 
 func _on_WebButton_pressed():
-	OS.shell_open("http://localhost:3000/web/galakanoid")
+	OS.shell_open("https://2022.alexandre.backhub.fr/web/galakanoid")
