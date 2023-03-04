@@ -65,7 +65,7 @@ func check_victory():
 		$Walls/Exit2.set_deferred("disabled", true)
 		$ExitOpened.play()
 		next_level += 1
-		score_objective += 5000
+		score_objective += 4000
 
 func _on_Exit_body_exited(body):
 	get_node("Bricks" + str(level_pointer+1)).queue_free()

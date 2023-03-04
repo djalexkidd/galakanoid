@@ -421,7 +421,6 @@ volume_db = 4.0
 autoplay = true
 
 [node name="ComboTimer" type="Timer" parent="."]
-wait_time = 2.0
 one_shot = true
 
 [connection signal="lost" from="." to="Ball" method="_on_Game_lost"]
